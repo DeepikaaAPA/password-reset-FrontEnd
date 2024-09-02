@@ -20,7 +20,7 @@ const ResetPassword = ({ email }) => {
       );
       setMessage(response.data.message);
     } catch (error) {
-      setMessage(error.data.message || "An error occurred");
+      setMessage(error.response.data.message || "An error occurred");
     }
   };
 
