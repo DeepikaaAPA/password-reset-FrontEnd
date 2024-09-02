@@ -1,8 +1,26 @@
-# React + Vite
+# Password Reset React Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React application that allows users to register, request a password reset code if they forget their password, and reset their password using the received code.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User Registration
+- Password Reset Request
+- Password Reset using Code
+
+## Technologies Used
+
+- React
+- React Router
+- Axios
+
+Usage
+Registration
+Navigate to the registration page.
+Fill in the required details and submit the form.
+You should receive a confirmation email upon successful registration.
+Password Reset
+Navigate to the login page and click on “Forgot Password”.
+Enter your registered email address and submit the form.
+Check your email for the reset code.
+Enter the reset code and your new password on the reset password page.
