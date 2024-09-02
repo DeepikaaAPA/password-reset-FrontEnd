@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
+
+import { instance } from "../services/emailServices";
 
 const ResetPassword = ({ email }) => {
   const [password, setPassword] = useState("");
@@ -14,10 +15,10 @@ const ResetPassword = ({ email }) => {
     }
 
     try {
-      const response = await axios.put(
-        `http://127.0.0.1:3000/api/v1/resetPassword`,
-        { email, password }
-      );
+      const response = await instance.put(`/resetPassword`, {
+        email,
+        password,
+      });
       setMessage(response.data.message);
     } catch (error) {
       setMessage(error.response.data.message || "An error occurred");

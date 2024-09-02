@@ -22,5 +22,5 @@ const emailServices = {
     return await instance.post(`/verifyReset/${token}`, { email });
   },
 };
-
+export { instance };
 export default emailServices;
