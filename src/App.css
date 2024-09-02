@@ -1,0 +1,16 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+input{
+  width:400px;
+  height:40px;
+}
+
+
+.card {
+  padding: 2em;
+}
+
