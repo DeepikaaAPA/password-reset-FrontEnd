@@ -1,14 +1,10 @@
 import { useState } from "react";
-import {
-  createBrowserRouter,
-  Link,
-  RouterProvider,
-  useLoaderData,
-} from "react-router-dom";
+import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import ForgotPassword from "./components/ForgotPassword";
 import emailServices from "./services/emailServices";
+import ResetPassword from "./components/ResetPassword";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,22 +13,22 @@ const router = createBrowserRouter([
   {
     path: "/reset",
 
-    element: <ResetPassword> </ResetPassword>,
+    element: <VerifyResetPassword />,
   },
 ]);
 function App() {
   return (
-    <>
+    <div className="container border">
       <h1>Welcome!!!</h1>
       <RouterProvider router={router} />
-    </>
+    </div>
   );
 }
 
 // function tokenLoader({ params }) {
 //   return params.token;
 // }
-function ResetPassword() {
+function VerifyResetPassword() {
   const [email, setEmail] = useState("");
   const [code, setCode] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -56,20 +52,25 @@ function ResetPassword() {
           setMessage(response.data.message);
         }
       })
-      .catch((err) => setMessage(err.message));
+      .catch((err) => {
+        setShowForm(false);
+        setMessage(err.message);
+      });
   };
   return (
     <>
       <label>Enter email id :</label>
       <input type="email" value={email} onChange={handleEmailChange}></input>
       <br></br>
+      <label>Enter code:</label>
       <input type="text" value={code} onChange={handleCodeChange}></input>
-      <button className="btn btn-primary" onClick={handleSend}>
-        Send
-      </button>
-      {showForm ? "form" : null}
       <br></br>
-      {message}
+      <button className="m-3 btn btn-primary" onClick={handleSend}>
+        Verify code
+      </button>
+      <br></br>
+      <p className="text-danger">{message}</p>
+      {showForm ? <ResetPassword email={email} /> : null}
     </>
   );
 }
