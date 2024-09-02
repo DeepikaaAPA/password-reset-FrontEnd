@@ -5,9 +5,15 @@ import "./App.css";
 import ForgotPassword from "./components/ForgotPassword";
 import emailServices from "./services/emailServices";
 import ResetPassword from "./components/ResetPassword";
+import Register from "./components/Register";
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Register />,
+  },
+  {
+    path: "/forgot-password",
+
     element: <ForgotPassword />,
   },
   {
@@ -18,8 +24,9 @@ const router = createBrowserRouter([
 ]);
 function App() {
   return (
-    <div className="container border">
+    <div className="mycontainer border">
       <h1>Welcome!!!</h1>
+  
       <RouterProvider router={router} />
     </div>
   );

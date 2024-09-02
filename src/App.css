@@ -4,15 +4,17 @@
   padding: 2rem;
 }
 input {
-  width: 500px;
+  width: 300px;
+  max-width: 500px;
   height: 40px;
 }
 
 .card {
   padding: 2em;
+
   max-width: 500px;
 }
-.container {
+.mycontainer {
   text-align: center;
   padding: 10px;
 }
@@ -21,4 +23,5 @@ label {
   width: 200px;
   padding: 10px;
   text-align: right;
+  margin-right: 30px;
 }

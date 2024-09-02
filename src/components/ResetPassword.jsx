@@ -25,7 +25,7 @@ const ResetPassword = ({ email }) => {
   };
 
   return (
-    <div className="p-5  container border">
+    <div className="p-5  mycontainer border">
       <h2 className="text-primary">Reset Password</h2>
       <form onSubmit={handleSubmit}>
         <div>
