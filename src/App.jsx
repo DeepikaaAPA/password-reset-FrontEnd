@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="mycontainer border">
       <h1>Welcome!!!</h1>
-  
+
       <RouterProvider router={router} />
     </div>
   );
@@ -38,7 +38,7 @@ function App() {
 function VerifyResetPassword() {
   const [email, setEmail] = useState("");
   const [code, setCode] = useState("");
-  const [newPassword, setNewPassword] = useState("");
+
   const [showForm, setShowForm] = useState(false);
   const [message, setMessage] = useState("");
   const handleEmailChange = (event) => {
@@ -61,7 +61,7 @@ function VerifyResetPassword() {
       })
       .catch((err) => {
         setShowForm(false);
-        setMessage(err.message);
+        setMessage(err.response.data.message);
       });
   };
   return (
