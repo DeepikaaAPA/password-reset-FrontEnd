@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseURL = "http://127.0.0.1:3000/api/v1";
+const baseURL = "https://password-reset-gu4o.onrender.com/api/v1";
 // define the axios instance
 const instance = axios.create({
   baseURL,
